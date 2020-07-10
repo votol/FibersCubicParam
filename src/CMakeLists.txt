@@ -4,8 +4,10 @@ get_filename_component(PARENT_DIR ${CMAKE_CURRENT_SOURCE_DIR} DIRECTORY)
 
 set (SOURCES main.cpp
              NetCdfWriter.cpp
+             AbOA.cpp
              OutputInterface.h
              NetCdfWriter.h
+             AbOA.h
              )
 
 set(CMAKE_CXX_FLAGS "-Wall -Wextra")
@@ -29,7 +31,8 @@ add_executable(${PROJECT_NAME}
 
 set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 17)
 target_link_libraries (${PROJECT_NAME} ~/lib/libyaml-cpp.so
-                                        netcdf_c++4)
+                                        netcdf_c++4
+                                        netcdf)
 
 
 
